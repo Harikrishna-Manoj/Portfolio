@@ -245,7 +245,7 @@ const Portfolio: React.FC = () => {
               <div className="absolute inset-0 bg-indigo-500/20 blur-lg rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <Code2 className="w-8 h-8 relative z-10 transition-transform duration-300 group-hover:rotate-12" />
             </div>
-            <span>Harikrishna <span className="text-slate-900 dark:text-slate-100">Manoj</span></span>
+            <span>Harikrishna&nbsp;<span className="text-slate-900 dark:text-slate-100">Manoj</span></span>
           </a>
 
           {/* Desktop Nav */}
@@ -366,27 +366,29 @@ const Portfolio: React.FC = () => {
           </div>
           <div className="flex-1 relative animate-in slide-in-from-right-10 fade-in duration-1000 delay-200">
             {/* Animated Profile Image Container */}
-            <div className="relative w-full aspect-square max-w-md mx-auto group animate-float hover:[animation-play-state:paused]">
-              <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500 to-violet-500 rounded-2xl rotate-6 opacity-20 blur-2xl group-hover:opacity-40 transition-opacity duration-500"></div>
-              <div className="absolute inset-0 bg-slate-200 dark:bg-slate-800 rounded-2xl rotate-3 transition-transform duration-500 group-hover:rotate-6 group-hover:scale-105"></div>
-              {/* Profile Image */}
-              <div className="relative h-full w-full bg-slate-100 dark:bg-slate-900 rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center border border-slate-200 dark:border-slate-800 transition-all duration-500 group-hover:-translate-y-2 group-hover:border-indigo-500/30">
-                <img
-                  src="https://picsum.photos/400/400"
-                  alt="Harikrishna Manoj Profile"
-                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-transform duration-700 ease-out"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                    const parent = target.parentNode;
-                    if (parent) {
-                      const fallbackDiv = document.createElement('div');
-                      fallbackDiv.className = 'text-slate-300 dark:text-slate-700 text-6xl font-bold';
-                      fallbackDiv.textContent = 'HM';
-                      parent.appendChild(fallbackDiv);
-                    }
-                  }}
-                />
+            <div className="relative w-full aspect-square max-w-md mx-auto group">
+              <div className="relative w-full h-full animate-float hover:[animation-play-state:paused] transition-all duration-500">
+                <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500 to-violet-500 rounded-2xl rotate-6 opacity-20 blur-2xl group-hover:opacity-40 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-slate-200 dark:bg-slate-800 rounded-2xl rotate-3 transition-transform duration-500 group-hover:rotate-6 group-hover:scale-105"></div>
+                {/* Profile Image */}
+                <div className="relative h-full w-full bg-slate-100 dark:bg-slate-900 rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center border border-slate-200 dark:border-slate-800 transition-all duration-500 group-hover:-translate-y-3 group-hover:border-indigo-500/30 group-hover:shadow-xl group-hover:shadow-indigo-500/20">
+                  <img
+                    src="uploaded:new%20hari.jpg-a9701c9d-3920-46e6-bf3b-95874c9ca9fe"
+                    alt="Harikrishna Manoj Profile"
+                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-transform duration-700 ease-out"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const parent = target.parentNode;
+                      if (parent) {
+                        const fallbackDiv = document.createElement('div');
+                        fallbackDiv.className = 'text-slate-300 dark:text-slate-700 text-6xl font-bold flex items-center justify-center w-full h-full';
+                        fallbackDiv.textContent = 'HM';
+                        parent.appendChild(fallbackDiv);
+                      }
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>
